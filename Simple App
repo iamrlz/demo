@@ -62,7 +62,25 @@ export default function Contact() {
 }
 ```
 
+```
+/* styles/globals.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: blue;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+```
 
 # Run a App
 
