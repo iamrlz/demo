@@ -14,15 +14,20 @@ npm run dev
 
 ```
 // pages/index.js
+import Link from "next/link";
 
 export default function Home() {
   return (
     <div style={{ textAlign: "center", marginTop: "50px" }}>
       <h1>Welcome to Next.js!</h1>
       <p>This is a simple Next.js application.</p>
+      <nav>
+        <Link href="/about">About Us</Link> | <Link href="/contact">Contact</Link>
+      </nav>
     </div>
   );
 }
+
 ```
 # Run a App
 
