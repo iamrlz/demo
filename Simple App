@@ -47,6 +47,22 @@ export default function About() {
 
 ```
 
+```
+// pages/contact.js
+import Link from "next/link";
+
+export default function Contact() {
+  return (
+    <div style={{ textAlign: "center", marginTop: "50px" }}>
+      <h1>Contact</h1>
+      <p>Email us at: example@example.com</p>
+      <Link href="/">Go back home</Link>
+    </div>
+  );
+}
+```
+
+
 
 # Run a App
 
