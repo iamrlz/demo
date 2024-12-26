@@ -1,0 +1,81 @@
+# Maze Runner Game in Ruby
+
+This is a simple, terminal-based **Maze Runner** game written in Ruby. Navigate through a randomly generated maze to find the exit!
+
+## How to Play
+1. Clone or download this repository.
+2. Save the code as `maze_runner.rb`.
+3. Run it in the terminal with `ruby maze_runner.rb`.
+4. Use **W** (up), **A** (left), **S** (down), **D** (right) to navigate. Press **Q** to quit.
+
+## Code
+
+```ruby
+# Maze Runner Game
+require 'io/console'
+
+# Generate a simple maze
+def generate_maze(rows, cols)
+  maze = Array.new(rows) { Array.new(cols, "#") }
+  (1...rows - 1).each do |row|
+    (1...cols - 1).each do |col|
+      maze[row][col] = [" ", " "].sample
+    end
+  end
+  maze[1][1] = "S"  # Starting point
+  maze[rows - 2][cols - 2] = "E"  # Exit point
+  maze
+end
+
+# Display the maze
+def display_maze(maze, player_pos)
+  system("clear")
+  maze.each_with_index do |row, r_idx|
+    row.each_with_index do |cell, c_idx|
+      if [r_idx, c_idx] == player_pos
+        print "P"
+      else
+        print cell
+      end
+    end
+    puts
+  end
+end
+
+# Main Game Logic
+def maze_runner
+  rows, cols = 10, 15
+  maze = generate_maze(rows, cols)
+  player_pos = [1, 1]
+
+  loop do
+    display_maze(maze, player_pos)
+    puts "Use W, A, S, D to move. Find the exit (E)!"
+
+    input = STDIN.getch.downcase
+    break if input == "q"  # Quit the game
+
+    new_pos = player_pos.dup
+
+    case input
+    when "w" then new_pos[0] -= 1  # Up
+    when "s" then new_pos[0] += 1  # Down
+    when "a" then new_pos[1] -= 1  # Left
+    when "d" then new_pos[1] += 1  # Right
+    end
+
+    # Check boundaries and walls
+    if maze[new_pos[0]][new_pos[1]] != "#"
+      player_pos = new_pos
+    end
+
+    # Check win condition
+    if maze[player_pos[0]][player_pos[1]] == "E"
+      display_maze(maze, player_pos)
+      puts "Congratulations! You found the exit!"
+      break
+    end
+  end
+end
+
+maze_runner
