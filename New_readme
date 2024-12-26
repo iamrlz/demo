@@ -18,3 +18,21 @@ A simple command-line implementation of the classic Rock Paper Scissors game.
 2. Run the following command:  
    ```bash  
    python main.py
+```
+
+## 2. Simple HTML CAS App  
+
+**Directory:** `/cas_app`  
+A minimal web application designed with HTML for educational purposes. This CAS (Content Addressable Storage) app demonstrates basic front-end design and functionality.  
+
+### Features:  
+- Interactive user interface with forms.  
+- Basic HTML structure showcasing content storage capabilities.  
+
+### How to Use:  
+1. Navigate to the `/cas_app` directory.  
+2. Open the `index.html` file in any web browser.  
+3. Explore and interact with the simple CAS functionality.  
+
+---  
+
