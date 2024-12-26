@@ -36,3 +36,18 @@ A minimal web application designed with HTML for educational purposes. This CAS 
 
 ---  
 
+## 3. Maze Game (Ruby)  
+
+**File:** `maze_game.rb`  
+A terminal-based maze game built using Ruby. Navigate through the maze and reach the endpoint.  
+
+### Features:  
+- Randomly generated mazes for replayability.  
+- Simple yet engaging gameplay mechanics.  
+
+### How to Run:  
+1. Ensure Ruby is installed on your system.  
+2. Navigate to the directory containing the `maze_game.rb` file.  
+3. Run the following command:  
+   ```bash  
+   ruby maze_game.rb
